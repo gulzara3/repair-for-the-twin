@@ -1,0 +1,12 @@
+# Full experiment environment (as used on Google Colab, NVIDIA L4 GPU).
+# For analysis of the released results only: pip install -e ".[figures]"
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.5
+torch>=2.3
+pypots==1.5
+h5py
+matplotlib>=3.7
+seaborn>=0.13
+tqdm

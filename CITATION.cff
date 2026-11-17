@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "Repair for the Twin: decision-aware evaluation of sensor-data imputation for digital-twin prognostics"
+type: software
+version: 1.0.0
+date-released: 2026-11-17
+license: MIT
+repository-code: "https://github.com/gulzara3/repair-for-the-twin"
+keywords:
+  - digital twin
+  - remaining useful life
+  - missing data imputation
+  - uncertainty quantification
+  - conformal prediction
+  - predictive maintenance
+authors:
+  - family-names: "One"
+    given-names: "Author"
+  - family-names: "Two"
+    given-names: "Author"
+  - family-names: "Three"
+    given-names: "Author"
+preferred-citation:
+  type: article
+  title: "Repair for the Twin: Decision-Aware Evaluation of Sensor-Data Imputation for Digital-Twin Prognostics with Uncertainty Propagation"
+  authors:
+    - family-names: "One"
+      given-names: "Author"
+    - family-names: "Two"
+      given-names: "Author"
+    - family-names: "Three"
+      given-names: "Author"
+  journal: "Manuscript under review"
+  year: 2026

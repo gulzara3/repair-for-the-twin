@@ -1,0 +1,277 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#fff}
+  svg{display:block;font-family:Inter,"DejaVu Sans",sans-serif}
+  .lane-title{font-size:15px;font-weight:700;letter-spacing:.12em}
+  .h{font-size:19px;font-weight:700;fill:#fff}
+  .t{font-size:16.5px;fill:#1f2933}
+  .s{font-size:14.5px;fill:#52606d}
+  .m{font-family:"DejaVu Serif",serif;font-style:italic}
+  .chip{font-size:14.5px;fill:#1f2933}
+</style></head>
+<body>
+<svg id="fig" width="1400" height="1010" viewBox="0 0 1400 1010" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e4c59"/></marker>
+  <marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f5d8c"/></marker>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f6d5d1"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c0392b" stroke-width="2.2"/></pattern>
+  <filter id="sh" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1f2933" flood-opacity=".12"/></filter>
+</defs>
+
+<!-- ============ lanes ============ -->
+<rect x="10" y="10" width="1380" height="290" rx="14" fill="#eef4fb"/>
+<rect x="10" y="312" width="1380" height="398" rx="14" fill="#fdf4e8"/>
+<rect x="10" y="722" width="1380" height="280" rx="14" fill="#ecf6ee"/>
+<text class="lane-title" fill="#2f5d8c" transform="translate(44,155) rotate(-90)" text-anchor="middle">OFFLINE · ONCE PER SUBSET</text>
+<text class="lane-title" fill="#b5651d" transform="translate(44,511) rotate(-90)" text-anchor="middle">ONLINE · 4 × 3 × 3 × 10 RUNS</text>
+<text class="lane-title" fill="#2e7d4f" transform="translate(44,862) rotate(-90)" text-anchor="middle">EVALUATION</text>
+
+<!-- card helper: header bar + badge -->
+<!-- ============ Lane A ============ -->
+<g filter="url(#sh)">
+  <rect x="80" y="30" width="290" height="250" rx="10" fill="#fff"/>
+  <rect x="400" y="30" width="290" height="250" rx="10" fill="#fff"/>
+  <rect x="720" y="30" width="310" height="250" rx="10" fill="#fff"/>
+  <rect x="1060" y="30" width="310" height="250" rx="10" fill="#fff"/>
+</g>
+<g>
+  <path d="M80,40 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#2f5d8c"/>
+  <path d="M400,40 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#2f5d8c"/>
+  <path d="M720,40 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#2f5d8c"/>
+  <path d="M1060,40 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#2f5d8c"/>
+  <circle cx="100" cy="48" r="11" fill="#fff"/><text x="100" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5d8c">1</text>
+  <circle cx="420" cy="48" r="11" fill="#fff"/><text x="420" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5d8c">2</text>
+  <circle cx="740" cy="48" r="11" fill="#fff"/><text x="740" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5d8c">3</text>
+  <circle cx="1080" cy="48" r="11" fill="#fff"/><text x="1080" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5d8c">4</text>
+  <text class="h" x="119" y="55">Sensor streams</text>
+  <text class="h" x="439" y="55">Preprocessing</text>
+  <text class="h" x="759" y="55">Heteroscedastic twin</text>
+  <text class="h" x="1099" y="55">Conformal calibration</text>
+</g>
+<!-- 1 sensor streams -->
+<g fill="none" stroke-width="2.2">
+  <polyline stroke="#2f5d8c" points="100,120 130,118 160,121 190,116 220,112 250,104 280,92 310,76 340,60" transform="translate(0,26)"/>
+  <polyline stroke="#7b9acc" points="100,150 130,152 160,149 190,151 220,147 250,142 280,135 310,124 340,110" transform="translate(0,26)"/>
+  <polyline stroke="#b9cbe6" points="100,176 130,174 160,177 190,175 220,174 250,171 280,168 310,162 340,153" transform="translate(0,26)"/>
+</g>
+<text class="t" x="100" y="232">NASA C-MAPSS FD001 to FD004</text>
+<text class="s" x="100" y="256">run-to-failure turbofan fleets</text>
+<!-- 2 preprocessing -->
+<rect x="545" y="88" width="105" height="92" rx="4" fill="#dce7f5"/>
+<polyline fill="none" stroke="#2f5d8c" stroke-width="2.2" points="420,150 450,148 480,151 510,146 540,142 570,136 600,128 630,117 660,104"/>
+<text class="s" x="597" y="106" text-anchor="middle">window L = 30</text>
+<text class="t" x="420" y="210">14 informative sensors</text>
+<text class="t" x="420" y="234">RUL label capped at 125</text>
+<text class="s" x="420" y="258">regime-wise min-max scaling (k = 6)</text>
+<!-- 3 twin -->
+<g>
+  <rect x="742" y="86" width="96" height="22" rx="5" fill="#dce7f5" stroke="#2f5d8c"/>
+  <rect x="748" y="94" width="96" height="22" rx="5" fill="#dce7f5" stroke="#2f5d8c"/>
+  <rect x="754" y="102" width="96" height="22" rx="5" fill="#dce7f5" stroke="#2f5d8c"/>
+  <rect x="760" y="110" width="96" height="22" rx="5" fill="#dce7f5" stroke="#2f5d8c"/>
+  <rect x="766" y="118" width="96" height="22" rx="5" fill="#fff" stroke="#2f5d8c"/>
+  <text class="s" x="814" y="134" text-anchor="middle">K = 5</text>
+  <path d="M885,170 C915,170 925,95 945,95 C965,95 975,170 1005,170" fill="#c7d8ee" stroke="#2f5d8c" stroke-width="2"/>
+  <line x1="945" y1="95" x2="945" y2="170" stroke="#2f5d8c" stroke-dasharray="3 3"/>
+  <text class="m" x="945" y="88" text-anchor="middle" font-size="16" fill="#1f2933">μ, σ²</text>
+</g>
+<text class="t" x="740" y="210">1D-CNN + GRU, Gaussian NLL</text>
+<text class="t" x="740" y="234">aleatoric + epistemic variance</text>
+<text class="s" x="740" y="258">clean training windows, trained once</text>
+<!-- 4 conformal -->
+<g fill="#7b9acc">
+  <rect x="1085" y="160" width="20" height="14"/><rect x="1108" y="140" width="20" height="34"/>
+  <rect x="1131" y="112" width="20" height="62"/><rect x="1154" y="98" width="20" height="76"/>
+  <rect x="1177" y="118" width="20" height="56"/><rect x="1200" y="140" width="20" height="34"/>
+  <rect x="1223" y="154" width="20" height="20"/><rect x="1246" y="164" width="20" height="10"/>
+  <rect x="1269" y="168" width="20" height="6"/>
+</g>
+<line x1="1259" y1="88" x2="1259" y2="178" stroke="#c0392b" stroke-width="2.4" stroke-dasharray="5 4"/>
+<text x="1268" y="98" font-size="17" fill="#c0392b" font-family="DejaVu Serif" font-style="italic">q̂</text>
+<text class="t" x="1080" y="210">scores |y − μ| / σ on clean</text>
+<text class="t" x="1080" y="234">validation windows, α = 0.05</text>
+<text class="s" x="1080" y="258">q̂ = 1.50 to 2.01 across subsets</text>
+<!-- lane A arrows -->
+<g stroke="#2f5d8c" stroke-width="2.4" fill="none" marker-end="url(#arB)">
+  <line x1="372" y1="155" x2="396" y2="155"/>
+  <line x1="692" y1="155" x2="716" y2="155"/>
+  <line x1="1032" y1="155" x2="1056" y2="155"/>
+</g>
+
+<!-- ============ Lane B ============ -->
+<g filter="url(#sh)">
+  <rect x="80" y="335" width="290" height="355" rx="10" fill="#fff"/>
+  <rect x="400" y="335" width="290" height="165" rx="10" fill="#fff"/>
+  <rect x="400" y="520" width="290" height="170" rx="10" fill="#fff"/>
+  <rect x="720" y="335" width="310" height="355" rx="10" fill="#fff"/>
+  <rect x="1060" y="335" width="310" height="355" rx="10" fill="#fff"/>
+</g>
+<g>
+  <path d="M80,345 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#b5651d"/>
+  <path d="M400,345 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#b5651d"/>
+  <path d="M400,530 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#b5651d"/>
+  <path d="M720,345 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#b5651d"/>
+  <path d="M1060,345 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#b5651d"/>
+  <circle cx="100" cy="353" r="11" fill="#fff"/><text x="100" y="358" text-anchor="middle" font-size="14" font-weight="700" fill="#b5651d">5</text>
+  <circle cx="420" cy="353" r="11" fill="#fff"/><text x="420" y="358" text-anchor="middle" font-size="13" font-weight="700" fill="#b5651d">6a</text>
+  <circle cx="420" cy="538" r="11" fill="#fff"/><text x="420" y="543" text-anchor="middle" font-size="13" font-weight="700" fill="#b5651d">6b</text>
+  <circle cx="740" cy="353" r="11" fill="#fff"/><text x="740" y="358" text-anchor="middle" font-size="14" font-weight="700" fill="#b5651d">7</text>
+  <circle cx="1080" cy="353" r="11" fill="#fff"/><text x="1080" y="358" text-anchor="middle" font-size="14" font-weight="700" fill="#b5651d">8</text>
+  <text class="h" x="119" y="360">Test-stream corruption</text>
+  <text class="h" x="439" y="360">Point repair</text>
+  <text class="h" x="439" y="545">Multiple imputation</text>
+  <text class="h" x="759" y="360">Prediction and pooling</text>
+  <text class="h" x="1099" y="360">Calibrated decision</text>
+</g>
+<!-- 5 corruption grid: 12 x 7 -->
+<g id="grid"></g>
+<text class="s" x="225" y="392" text-anchor="middle">time steps →</text>
+<text class="t" x="100" y="600">MCAR · MAR · MNAR</text>
+<text class="t" x="100" y="624">rates 10, 30 and 50 %</text>
+<text class="s" x="100" y="648">burst gaps of three steps</text>
+<text class="s" x="100" y="672">masks retained as ground truth</text>
+<rect x="290" y="586" width="16" height="16" fill="url(#hatch)" stroke="#c0392b"/>
+<text class="s" x="312" y="599">missing</text>
+<!-- 6a chips -->
+<g class="chips">
+  <rect x="420" y="390" width="70" height="28" rx="14" fill="#f3e3d1"/><text class="chip" x="455" y="409" text-anchor="middle">mean</text>
+  <rect x="498" y="390" width="104" height="28" rx="14" fill="#f3e3d1"/><text class="chip" x="550" y="409" text-anchor="middle">forward-fill</text>
+  <rect x="610" y="390" width="62" height="28" rx="14" fill="#f3e3d1"/><text class="chip" x="641" y="409" text-anchor="middle">KNN</text>
+  <rect x="420" y="426" width="84" height="28" rx="14" fill="#f3e3d1"/><text class="chip" x="462" y="445" text-anchor="middle">US-GAN</text>
+  <rect x="512" y="426" width="72" height="28" rx="14" fill="#f3e3d1"/><text class="chip" x="548" y="445" text-anchor="middle">SAITS</text>
+  <rect x="592" y="426" width="80" height="28" rx="14" fill="#fff" stroke="#b5651d" stroke-dasharray="4 3"/><text class="chip" x="632" y="445" text-anchor="middle">no repair</text>
+</g>
+<text class="s" x="420" y="484">one completed window per run</text>
+<!-- 6b stacked draws -->
+<g>
+  <rect x="420" y="572" width="120" height="68" rx="5" fill="#fbe9d6" stroke="#b5651d" opacity=".55"/>
+  <rect x="430" y="580" width="120" height="68" rx="5" fill="#fbe9d6" stroke="#b5651d" opacity=".7"/>
+  <rect x="440" y="588" width="120" height="68" rx="5" fill="#fbe9d6" stroke="#b5651d" opacity=".85"/>
+  <rect x="450" y="596" width="120" height="68" rx="5" fill="#fff" stroke="#b5651d"/>
+  <polyline points="458,640 478,636 498,639 518,630 538,626 558,616" fill="none" stroke="#b5651d" stroke-width="2"/>
+  <text class="s" x="510" y="616" text-anchor="middle">draw d</text>
+</g>
+<text class="t" x="584" y="602">MICE  m = 5</text>
+<text class="t" x="584" y="628">CSDI  m = 20</text>
+<text class="s" x="584" y="654">posterior draws</text>
+<!-- 7 prediction & pooling -->
+<g>
+  <path d="M745,520 C800,520 820,420 875,420 C930,420 950,520 1005,520" fill="#fbe9d6" stroke="#b5651d" stroke-width="2.2"/>
+  <path d="M800,520 C840,520 850,400 875,400 C900,400 910,520 950,520" fill="none" stroke="#2f5d8c" stroke-width="2.2"/>
+  <line x1="745" y1="520" x2="1005" y2="520" stroke="#3e4c59" stroke-width="1.2"/>
+  <text class="s" x="905" y="408" fill="#2f5d8c">W̄</text>
+  <text class="s" x="958" y="455" fill="#b5651d">T</text>
+</g>
+<text x="875" y="568" text-anchor="middle" font-size="20" fill="#1f2933" font-family="DejaVu Serif" font-style="italic">T = W̄ + (1 + 1/m) B</text>
+<text class="t" x="740" y="606">twin applied to each draw</text>
+<text class="t" x="740" y="630">Rubin pooling across draws</text>
+<text class="s" x="740" y="654">point repair: B = 0, T = W</text>
+<text class="s" x="740" y="678">law of total variance</text>
+<!-- 8 decision -->
+<g>
+  <line x1="1085" y1="480" x2="1345" y2="480" stroke="#3e4c59" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text class="s" x="1342" y="502" text-anchor="end">RUL (cycles)</text>
+  <line x1="1150" y1="395" x2="1150" y2="488" stroke="#c0392b" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <text x="1150" y="390" text-anchor="middle" font-size="15" fill="#c0392b" font-weight="700">τ = 20</text>
+  <rect x="1132" y="436" width="140" height="16" rx="8" fill="#c7d8ee" stroke="#2f5d8c"/>
+  <circle cx="1202" cy="444" r="6" fill="#2f5d8c"/>
+  <text class="m" x="1202" y="428" text-anchor="middle" font-size="15" fill="#2f5d8c">μ*</text>
+  <path d="M1132,462 l0,12" stroke="#c0392b" stroke-width="2.4"/>
+  <text x="1092" y="470" font-size="13.5" fill="#c0392b" font-weight="700">alarm</text>
+</g>
+<text class="t" x="1080" y="540">point: μ* ≤ τ</text>
+<text class="t" x="1080" y="564">risk-aware: μ* − q̂√T ≤ τ</text>
+<g>
+  <rect x="1080" y="582" width="88" height="28" rx="6" fill="#e8f1e9"/><text class="chip" x="1124" y="601" text-anchor="middle">plan 1</text>
+  <rect x="1176" y="582" width="88" height="28" rx="6" fill="#fdf0d5"/><text class="chip" x="1220" y="601" text-anchor="middle">false 2</text>
+  <rect x="1272" y="582" width="88" height="28" rx="6" fill="#f6d5d1"/><text class="chip" x="1316" y="601" text-anchor="middle">miss 10</text>
+</g>
+<text class="s" x="1080" y="640">regret = cost − oracle-policy cost</text>
+<text class="s" x="1080" y="664">= 2 · false alarms + 9 · misses</text>
+<!-- lane B arrows -->
+<g stroke="#3e4c59" stroke-width="2.4" fill="none" marker-end="url(#ar)">
+  <path d="M372,420 L396,420"/>
+  <path d="M372,605 L396,605"/>
+  <path d="M692,420 L716,420"/>
+  <path d="M692,605 L716,605"/>
+  <path d="M1032,512 L1056,512"/>
+</g>
+<!-- cross-lane: test windows (2 -> 5), twin (3 -> 7), q (4 -> 8) -->
+<path d="M545,282 L545,300 L225,300 L225,331" fill="none" stroke="#3e4c59" stroke-width="2.4" marker-end="url(#ar)"/>
+<text class="s" x="385" y="294" text-anchor="middle" font-style="italic">test windows</text>
+<path d="M875,282 L875,331" fill="none" stroke="#2f5d8c" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#arB)"/>
+<text class="s" x="885" y="312" font-style="italic" fill="#2f5d8c">twin</text>
+<path d="M1215,282 L1215,331" fill="none" stroke="#2f5d8c" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#arB)"/>
+<text x="1225" y="314" font-size="16" fill="#2f5d8c" font-family="DejaVu Serif" font-style="italic">q̂</text>
+
+<!-- ============ Lane C ============ -->
+<g filter="url(#sh)">
+  <rect x="400" y="742" width="290" height="140" rx="10" fill="#fff"/>
+  <rect x="720" y="742" width="310" height="140" rx="10" fill="#fff"/>
+  <rect x="1060" y="742" width="310" height="140" rx="10" fill="#fff"/>
+  <rect x="400" y="912" width="970" height="78" rx="10" fill="#2e7d4f"/>
+  <rect x="80" y="742" width="290" height="248" rx="10" fill="#fff"/>
+</g>
+<g>
+  <path d="M400,752 a10,10 0 0 1 10,-10 h270 a10,10 0 0 1 10,10 v26 h-290z" fill="#2e7d4f"/>
+  <path d="M720,752 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#2e7d4f"/>
+  <path d="M1060,752 a10,10 0 0 1 10,-10 h290 a10,10 0 0 1 10,10 v26 h-310z" fill="#2e7d4f"/>
+  <text class="h" x="418" y="767">L1 · Repair accuracy</text>
+  <text class="h" x="738" y="767">L2 · Twin fidelity</text>
+  <text class="h" x="1078" y="767">L3 · Decision quality</text>
+</g>
+<text class="t" x="418" y="808">imputation RMSE and MAE</text>
+<text class="s" x="418" y="834">on the injected cells only</text>
+<text class="t" x="738" y="808">RUL RMSE and PHM08 score</text>
+<text class="s" x="738" y="834">interval coverage and width</text>
+<text class="t" x="1078" y="808">point-policy regret</text>
+<text class="t" x="1078" y="834">risk-aware regret</text>
+<text class="s" x="1078" y="858">per fleet, against the oracle policy</text>
+<text x="885" y="945" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Ranking divergence across layers: Kendall τ<tspan baseline-shift="sub" font-size="14">K</tspan> with seed-bootstrap CIs</text>
+<text x="885" y="972" text-anchor="middle" font-size="16.5" fill="#e6f4ea">Repair-for-the-twin selection: argmin of expected decision cost, chosen on seeds 0–4, scored on 5–9</text>
+<!-- mini bump in left card -->
+<text x="98" y="770" font-size="16" font-weight="700" fill="#2e7d4f">Reading the layers</text>
+<g stroke-width="2.4" fill="none">
+  <line x1="130" y1="805" x2="300" y2="905" stroke="#0173b2"/>
+  <line x1="130" y1="855" x2="300" y2="805" stroke="#d55e00"/>
+  <line x1="130" y1="905" x2="300" y2="855" stroke="#9aa5b1"/>
+</g>
+<g>
+  <circle cx="130" cy="805" r="6" fill="#0173b2"/><circle cx="300" cy="905" r="6" fill="#0173b2"/>
+  <circle cx="130" cy="855" r="6" fill="#d55e00"/><circle cx="300" cy="805" r="6" fill="#d55e00"/>
+  <circle cx="130" cy="905" r="6" fill="#9aa5b1"/><circle cx="300" cy="855" r="6" fill="#9aa5b1"/>
+</g>
+<text class="s" x="130" y="930" text-anchor="middle">L1 rank</text>
+<text class="s" x="300" y="930" text-anchor="middle">L3 rank</text>
+<text class="s" x="98" y="962">crossing lines mean the best</text>
+<text class="s" x="98" y="982">repair is not the best decision</text>
+<!-- lane C arrows -->
+<g stroke="#3e4c59" stroke-width="2.4" fill="none" marker-end="url(#ar)">
+  <path d="M545,692 L545,738"/>
+  <path d="M875,692 L875,738"/>
+  <path d="M1215,692 L1215,738"/>
+  <path d="M545,884 L545,908"/>
+  <path d="M875,884 L875,908"/>
+  <path d="M1215,884 L1215,908"/>
+</g>
+<path d="M370,505 L388,505 L388,712 L545,712" fill="none" stroke="#3e4c59" stroke-width="2" stroke-dasharray="5 4"/>
+<text class="s" x="396" y="706" font-style="italic">masks</text>
+
+<script>
+  // missingness grid with burst gaps
+  const g = document.getElementById('grid');
+  const ns = 'http://www.w3.org/2000/svg';
+  const miss = new Set(['0-2','0-3','0-4','1-7','1-8','1-9','2-1','2-2','2-3','3-5','3-6','3-7','4-9','4-10','4-11','5-0','5-1','5-2','6-6','6-7','6-8']);
+  for (let r = 0; r < 7; r++) for (let c = 0; c < 12; c++) {
+    const e = document.createElementNS(ns, 'rect');
+    e.setAttribute('x', 102 + c * 20); e.setAttribute('y', 402 + r * 22);
+    e.setAttribute('width', 18); e.setAttribute('height', 20); e.setAttribute('rx', 2);
+    const k = r + '-' + c;
+    e.setAttribute('fill', miss.has(k) ? 'url(#hatch)' : '#e4e7eb');
+    if (miss.has(k)) e.setAttribute('stroke', '#c0392b');
+    g.appendChild(e);
+  }
+</script>
+</svg>
+</body></html>

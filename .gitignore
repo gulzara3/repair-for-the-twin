@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Editors and OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data and run outputs (C-MAPSS is downloaded, never committed)
+data/cmapss/
+runs/
+*.pt
+*.pypots
+*.npz
+*.zip
+
+# Local publishing notes (not part of the repository)
+PUBLISH_TO_GITHUB.md

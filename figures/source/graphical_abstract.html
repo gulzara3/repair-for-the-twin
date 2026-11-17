@@ -1,0 +1,88 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+body{margin:0;background:#fff}
+svg{display:block;font-family:Inter,"DejaVu Sans",sans-serif}
+.h{font-size:22px;font-weight:700;fill:#fff}
+.t{font-size:17px;fill:#1f2933}
+.s{font-size:15px;fill:#52606d}
+.big{font-size:46px;font-weight:800}
+</style></head><body>
+<svg id="fig" width="1400" height="560" viewBox="0 0 1400 560" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3e4c59"/></marker>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f6d5d1"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c0392b" stroke-width="2.2"/></pattern>
+  <filter id="sh"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1f2933" flood-opacity=".12"/></filter>
+</defs>
+<rect x="0" y="0" width="1400" height="560" fill="#f7f9fb"/>
+<text x="700" y="44" text-anchor="middle" font-size="26" font-weight="800" fill="#1f2933">Does better sensor-data repair give better maintenance decisions?</text>
+
+<!-- Panel 1 -->
+<g filter="url(#sh)"><rect x="30" y="70" width="420" height="460" rx="14" fill="#fff"/></g>
+<path d="M30,84 a14,14 0 0 1 14,-14 h392 a14,14 0 0 1 14,14 v34 h-420z" fill="#2f5d8c"/>
+<text class="h" x="52" y="103">1 · The problem</text>
+<g id="g1"></g>
+<text class="s" x="60" y="152">sensor stream with gaps (MCAR, MAR, MNAR)</text>
+<g fill="none" stroke="#3e4c59" stroke-width="2.4" marker-end="url(#ar)">
+  <line x1="240" y1="290" x2="240" y2="318"/><line x1="240" y1="380" x2="240" y2="408"/>
+</g>
+<rect x="110" y="250" width="260" height="38" rx="19" fill="#f3e3d1"/>
+<text class="t" x="240" y="275" text-anchor="middle">repair: chosen by RMSE?</text>
+<rect x="110" y="322" width="260" height="56" rx="10" fill="#dce7f5"/>
+<text class="t" x="240" y="346" text-anchor="middle">RUL digital twin</text>
+<text class="s" x="240" y="368" text-anchor="middle">heteroscedastic ensemble</text>
+<rect x="110" y="412" width="260" height="56" rx="10" fill="#fbe0dc"/>
+<text class="t" x="240" y="436" text-anchor="middle">maintenance alarm</text>
+<text class="s" x="240" y="458" text-anchor="middle">miss 10 · false alarm 2 · plan 1</text>
+<text class="s" x="60" y="505">The repair step is judged by reconstruction error,</text>
+<text class="s" x="60" y="523">yet its cost is paid at the decision.</text>
+
+<!-- Panel 2 -->
+<g filter="url(#sh)"><rect x="490" y="70" width="420" height="460" rx="14" fill="#fff"/></g>
+<path d="M490,84 a14,14 0 0 1 14,-14 h392 a14,14 0 0 1 14,14 v34 h-420z" fill="#b5651d"/>
+<text class="h" x="512" y="103">2 · The study</text>
+<text class="t" x="520" y="156">9 repair methods, from forward-fill to CSDI</text>
+<text class="t" x="520" y="186">4 C-MAPSS subsets · 3 mechanisms · 3 rates</text>
+<text class="t" x="520" y="216">10 seeds · 3,240 configurations</text>
+<g>
+  <path d="M580,330 C620,330 635,247 675,247 C715,247 730,330 770,330" fill="#fbe9d6" stroke="#b5651d" stroke-width="2.2"/>
+  <path d="M620,330 C650,330 658,233 675,233 C692,233 700,330 730,330" fill="none" stroke="#2f5d8c" stroke-width="2.2"/>
+  <line x1="575" y1="330" x2="780" y2="330" stroke="#3e4c59" stroke-width="1.2"/>
+  <text class="s" x="790" y="262">Rubin</text><text class="s" x="790" y="282">pooling</text>
+  <text x="700" y="362" text-anchor="middle" font-size="19" fill="#1f2933" font-family="DejaVu Serif" font-style="italic">T = W̄ + (1 + 1/m) B</text>
+</g>
+<text class="t" x="520" y="400">conformal intervals and a risk-aware rule:</text>
+<text x="520" y="428" font-size="18" fill="#1f2933" font-family="DejaVu Serif" font-style="italic">alarm if μ* − q̂√T ≤ τ</text>
+<rect x="520" y="446" width="110" height="34" rx="8" fill="#e8f1e9"/><text class="t" x="575" y="469" text-anchor="middle">L1 repair</text>
+<rect x="640" y="446" width="110" height="34" rx="8" fill="#e8f1e9"/><text class="t" x="695" y="469" text-anchor="middle">L2 twin</text>
+<rect x="760" y="446" width="130" height="34" rx="8" fill="#e8f1e9"/><text class="t" x="825" y="469" text-anchor="middle">L3 decision</text>
+<text class="s" x="520" y="514">Rankings are compared across all three layers.</text>
+
+<!-- Panel 3 -->
+<g filter="url(#sh)"><rect x="950" y="70" width="420" height="460" rx="14" fill="#fff"/></g>
+<path d="M950,84 a14,14 0 0 1 14,-14 h392 a14,14 0 0 1 14,14 v34 h-420z" fill="#2e7d4f"/>
+<text class="h" x="972" y="103">3 · What we found</text>
+<text class="big" x="975" y="186" fill="#2f5d8c">0.77</text>
+<text class="big" x="1150" y="186" fill="#c0392b">0.41</text>
+<text class="s" x="975" y="210">with RUL accuracy</text>
+<text class="s" x="1150" y="210" fill="#c0392b">with decision regret</text>
+<text class="s" x="975" y="236">mean Kendall τ over 36 settings; the accuracy</text>
+<text class="s" x="975" y="256">layer agrees more in 32 of the 36</text>
+<line x1="975" y1="274" x2="1345" y2="274" stroke="#e4e7eb"/>
+<text class="big" x="975" y="334" fill="#2e7d4f">2.3×</text>
+<text class="t" x="1100" y="318">lower regret when alarms use</text>
+<text class="t" x="1100" y="340">calibrated lower bounds</text>
+<line x1="975" y1="362" x2="1345" y2="362" stroke="#e4e7eb"/>
+<text class="big" x="975" y="422" fill="#b5651d">15.8 %</text>
+<text class="t" x="1160" y="406">saved out of sample</text>
+<text class="t" x="1160" y="428">by decision-based repair</text>
+<text class="s" x="975" y="476">Rubin's B term helps only where intervals</text>
+<text class="s" x="975" y="496">under-cover (Spearman ρ = 0.98).</text>
+<script>
+const g=document.getElementById('g1'),ns='http://www.w3.org/2000/svg';
+const miss=new Set(['0-3','0-4','0-5','1-9','1-10','1-11','2-1','2-2','2-3','3-7','3-8','3-9']);
+for(let r=0;r<4;r++)for(let c=0;c<16;c++){const e=document.createElementNS(ns,'rect');
+e.setAttribute('x',60+c*22);e.setAttribute('y',164+r*19);e.setAttribute('width',20);e.setAttribute('height',17);e.setAttribute('rx',2);
+const k=r+'-'+c;e.setAttribute('fill',miss.has(k)?'url(#hatch)':'#e4e7eb');if(miss.has(k))e.setAttribute('stroke','#c0392b');g.appendChild(e);}
+</script>
+</svg></body></html>
